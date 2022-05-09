@@ -1,10 +1,10 @@
 <?php
 
-namespace firstname;
+//namespace firstname;
 
 function checkPassword($password) {
 
-    echo '<h1 class="text-center">Firstname</h1>';
+    echo '<h1 class="text-center">Kenny</h1>';
 
     // ...
 
