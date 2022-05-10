@@ -27,6 +27,7 @@
                 // ...
                 include_once ('./functions/kenny.php');
                 checkPassword($password);
+                
             }
             else {
                 ?>
