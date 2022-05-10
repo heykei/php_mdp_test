@@ -19,14 +19,14 @@
         <div class="container py-3">
 
             <?php
-
             if (isset($_GET['password'])) {
 
                 $password = $_GET['password'];
-
+                
                 // I use my personal function with my namespace
                 // ...
-
+                include_once ('./functions/kenny.php');
+                checkPassword($password);
             }
             else {
                 ?>
