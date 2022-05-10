@@ -10,21 +10,26 @@ function checkPassword($password) {
     echo '<h4 class="text-end">Force du mot de passe<h4>';
 
     // Validate password strength
-    $uppercase = preg_match('@[A-Z]@', $password);
-    $lowercase = preg_match('@[a-z]@', $password);
-    $number    = preg_match('@[0-9]@', $password);
-    $specialChars = preg_match('@[-&(_)=+$^ù*:!;,?]@', $password);
-    $numCara = strlen($password) <= 12;
-    $tab = array (
-        'maj' => $uppercase,
-        'min' => $lowercase,
-        'numbr' => $number,
-        'spec' => $specialChars,
-        'mini' => $numCara,
+    $↗️ = preg_match('@[A-Z]@', $password);
+    $↘️ = preg_match('@[a-z]@', $password);
+    $🔢 = preg_match('@[0-9]@', $password);
+    $💲 = preg_match('@[-&(_)=+$^ù*:!;,?]@', $password);
+    $📊 = strlen($password) <= 12;
+    $📑 = array (
+        'maj' => $↗️,
+        'min' => $↘️,
+        'numbr' => $🔢,
+        'spec' => $💲,
+        'mini' => $📊,
     );
-
-        if ($tab) {
-            # code...
+    $⌨️ = array_filter($📑);
+        if ($⌨️) {
+            if(count($📑) == 5) {
+                echo  '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+            }
+            else {
+                echo  '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+            }
         }
     // if(!$uppercase || !$lowercase || !$number || !$specialChars || $numCara) {
     //     echo '<div class="progress">
