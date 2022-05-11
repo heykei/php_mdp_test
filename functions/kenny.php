@@ -1,20 +1,19 @@
 <?php
 
-// namespace kenny;
+namespace kenny;
 
-function checkPassword($password) {
+function checkPassword($🧭) {
 
     echo '<h1 class="text-center">Kenny</h1>';
-    // ...
-    echo "<h4>Mot de passe: $password<h4>";
-    echo '<h4 class="text-end">Force du mot de passe<h4>';
+    echo "<h5>Mot de passe: $🧭</h5>";
+    echo '<h5 class="text-end">Force du mot de passe</h5>';
 
     // Validate password strength
-    $↗️ = preg_match('@[A-Z]@', $password);
-    $↘️ = preg_match('@[a-z]@', $password);
-    $🔢 = preg_match('@[0-9]@', $password);
-    $💲 = preg_match('@[-&(_)=+$^ù*:!;,?]@', $password);
-    $📊 = strlen($password) <= 12;
+    $↗️ = preg_match('@[A-Z]@', $🧭);
+    $↘️ = preg_match('@[a-z]@', $🧭);
+    $🔢 = preg_match('@[0-9]@', $🧭);
+    $💲 = preg_match('@[-&=(_)+$^ù*:!;,?%]@', $🧭);
+    $📊 = strlen($🧭) >= 12;
     $📑 = array (
         'maj' => $↗️,
         'min' => $↘️,
@@ -22,33 +21,61 @@ function checkPassword($password) {
         'spec' => $💲,
         'mini' => $📊,
     );
+
     $⌨️ = array_filter($📑);
-        if ($⌨️) {
-            if(count($📑) == 5) {
-                echo  '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
-            }
-            else {
-                echo  '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 0%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
-            }
-        }
-    // if(!$uppercase || !$lowercase || !$number || !$specialChars || $numCara) {
-    //     echo '<div class="progress">
-    //             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
-    //         </div><br>';
-    //     echo '<div class="card  mx-auto " style="max-width: 30rem;">
-    //             <div class="card-header card text-white bg-primary">
-    //                  le mot de passe doit contenir au moins :
-    //             </div>
-    //             <ul class="list-group list-group-flush">
-    //                 <li class="list-group-item">1 chiffre</li>
-    //                 <li class="list-group-item">1 minuscule</li>
-    //                 <li class="list-group-item">1 majuscule</li>
-    //                 <li class="list-group-item">1 caractère spècial</li>
-    //                 <li class="list-group-item">12 caractères</li>
-    //             </ul>
-    //             </div>';
-    // }else{
-    // echo '<a class="btn btn-success" href="index.php" role="button">OK</a>';
-    // }
+
+    if ($📑) {
     
+        if(count($⌨️) == 1) {
+            echo  '<div class="progress"><div class="progress-bar progress-bar-striped bg-danger progress-bar-animated " role="progressbar" style="width: 20%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+        }
+        elseif (count($⌨️) == 2 ) {
+            echo  '<div class="progress"><div class="progress-bar progress-bar-striped bg-warning progress-bar-animated " role="progressbar" style="width: 40%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+        }
+
+        elseif (count($⌨️) == 3 ) {
+            echo  '<div class="progress"><div class="progress-bar progress-bar-striped bg-info progress-bar-animated " role="progressbar" style="width: 60%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+        }
+
+        elseif (count($⌨️) == 4) {
+            echo  '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" style="width: 80%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+        }
+
+        elseif (count($⌨️)== 5) {
+            echo  '<div class="progress"><div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+
+        }
+
+        elseif (count($⌨️) == 0) {
+            echo  '<div class="progress"><div class="progress-bar progress-bar-striped bg-danger progress-bar-animated " role="progressbar" style="width: 0%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>';
+        }
+    }
+    if (!$↗️ || !$↘️ || !$🔢 || !$💲 || !$📊) {
+    
+        if ($↗️ || $↘️ || $🔢 || $💲 || !$📊) {     
+            echo '<ul class="list-group mt-5 mx-auto" style="max-width: 350px">
+                 <li class="list-group-item active" aria-current="true">Le mot de passe doit contenir au moins:</li>';
+        }
+        if (!$🔢) {
+            echo '<li class="list-group-item">1 chiffre</li>';
+        }
+        if (!$↘️) {
+            echo '<li class="list-group-item">1 minuscule</li>';
+        }
+        if (!$↗️) {
+            echo '<li class="list-group-item">1 majuscule</li>';
+        }
+
+        if (!$💲) {
+            echo '<li class="list-group-item">1 caractère spécial</li>';
+        }
+        if (!$📊) {
+            echo '<li class="list-group-item">12 caractères</li>';
+        }
+       
+        echo'</ul>';
+    }
+    else {
+        echo '<a href="index.php" class="text-center btn btn-success d-grid gap-1 col-1 mx-auto mt-4 py-1 px-1">OK</a>';
+    }
 }
