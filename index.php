@@ -26,10 +26,10 @@
             <?php
             if (isset($_GET['password'])) {
 
-                $🧭 = $_GET['password'];
+                $password = $_GET['password'];
                 
                 // I use my personal function with my namespace
-                kenny\checkPassword($🧭);
+                kenny\checkPassword($password);
             }
             else {
                 ?>
